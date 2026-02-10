@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: pyspark-sqlite-demo
+    volumes:
+      - .:/app
+    environment:
+      - JAVA_HOME=/usr/lib/jvm/java-17-openjdk-arm64
+    working_dir: /app
+    command: python pyspark_sqlite_demo.py
